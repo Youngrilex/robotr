@@ -12,7 +12,7 @@ const CardList = ({ robots }) => {
       />
     );
   });
-  return <div>{cardComponent}</div>;
+  return <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-8 mx-6 sm:mx-24">{cardComponent}</div>;
 };
 
 export default CardList;
