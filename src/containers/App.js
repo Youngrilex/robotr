@@ -29,10 +29,10 @@ class App extends Component {
         .includes(this.state.searchfield.toLowerCase());
     });
     return (
-      <div className="tc">
-        <h1 className="f1">rilexfriends</h1>
+      <div className="">
+        <h1 className="flex items-center text-[40px] sm:text-[100px]">rilexfriends</h1>
         <SearchBox searchChange={this.onSearchChange} />
-        <Scroll>
+        <Scroll className="flex">
         <CardList robots={filteredRobots} /> 
          </Scroll>
       </div>
