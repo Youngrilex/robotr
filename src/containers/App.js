@@ -3,6 +3,7 @@ import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import Scroll from '../components/Scroll';
 import "./App.css";
+import MOCK_DATA from '../MOCK_DATA (2).json';
 
 class App extends Component {
   constructor() {
@@ -14,9 +15,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((users) => this.setState({ robots: users }));
+    this.setState({ robots: MOCK_DATA });
   }
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value });
@@ -24,7 +23,7 @@ class App extends Component {
 
   render() {
     const filteredRobots = this.state.robots.filter((robots) => {
-      return robots.name
+      return robots.name && robots.username
         .toLowerCase()
         .includes(this.state.searchfield.toLowerCase());
     });

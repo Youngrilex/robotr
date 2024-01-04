@@ -8,11 +8,11 @@ const CardList = ({ robots }) => {
         key={i}
         id={robots[i].id}
         name={robots[i].name}
-        email={robots[i].email}
+        username={robots[i].username}
       />
     );
   });
-  return <div className="mt-4 sm:mt-8 grid grid-cols sm:grid-cols-3 place-content-center gap-4 sm:gap-8 mx-6 sm:mx-24">{cardComponent}</div>;
-};
+  return <div className="mt-4 sm:mt-8 grid grid-cols-3 sm:grid-cols-6 place-content-center sm:gap-2 mx-2 sm:mx-24">{cardComponent}</div>;
+}
 
 export default CardList;
