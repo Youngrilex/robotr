@@ -33,22 +33,22 @@ const CardList = ({ robots }) => {
 
   return (
     <div className="mt-4 sm:mt-8 grid grid-cols-3 sm:grid-cols-6 place-content-center sm:gap-2 mx-2 sm:mx-24">
-      <div className="card-input bg-green-200 border-r-3 p-3 m-2 grow rounded-3xl shadow-xl hover:scale-110 hover:transform hover:duration-300 p-4">
+      <div className="card-input flex flex-col items-center justify-center bg-green-200 border-r-3 p-3 m-2 grow rounded-3xl shadow-xl hover:scale-110 hover:transform hover:duration-300 p-4">
         <input
           type="text"
           placeholder="Name"
           value={newName}
           onChange={(e) => setNewName(e.target.value)}
-          className="border border-gray-300 rounded-md p-2 mr-12 my-2 w-full"
+          className="border border-gray-300 rounded-md p-2 my-2 w-full"
         />
         <input
           type="text"
           placeholder="Username"
           value={newUsername}
           onChange={(e) => setNewUsername(e.target.value)}
-          className="border border-gray-300 rounded-md p-2 mr-2 mb-2 w-full"
+          className="border border-gray-300 rounded-md p-2 mb-2 w-full"
         />
-        <button onClick={handleAddCard} className="bg-green-400 border border-gray-300 rounded-md p-2 mr-2 mt-2 w-full hover:scale-110 hover:bg-green-500 hover:transform hover:duration-300">Add Card</button>
+        <button onClick={handleAddCard} className="bg-green-400 border border-gray-300 rounded-md p-2 mt-2 w-full hover:scale-110 hover:bg-green-500 hover:transform hover:duration-300">Add Card</button>
       </div>
       {cardComponents}
     </div>
