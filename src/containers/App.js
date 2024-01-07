@@ -22,19 +22,21 @@ class App extends Component {
   };
 
   render() {
-    const filteredRobots = this.state.robots.filter((robots) => {
-      return robots.name && robots.username
-        .toLowerCase()
-        .includes(this.state.searchfield.toLowerCase());
+    const filteredRobots = this.state.robots.filter(({ name, username }) => {
+      const searchTerm = this.state.searchfield.toLowerCase();
+      return (name && name.toLowerCase().includes(searchTerm)) ||
+        (username && username.toLowerCase().includes(searchTerm));
     });
+
+
     return (
       <div className="bg-gradient-to-r from-[#0f766e] to-[#172554] -mt-4">
         <div className="flex flex-col items-center pt-12">
-        <h1 className="flex items-center text-[40px] sm:text-[70px]">rilexfriends</h1>
-        <SearchBox searchChange={this.onSearchChange} /></div>
+          <h1 className="flex items-center text-[40px] sm:text-[70px]">rilexfriends</h1>
+          <SearchBox searchChange={this.onSearchChange} /></div>
         <Scroll className="flex">
-        <CardList robots={filteredRobots} /> 
-         </Scroll>
+          <CardList robots={filteredRobots} />
+        </Scroll>
       </div>
     );
   }
