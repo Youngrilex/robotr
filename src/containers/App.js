@@ -5,6 +5,7 @@ import Scroll from '../components/Scroll';
 import "./App.css";
 import MOCK_DATA from '../MOCK_DATA (2).json';
 
+
 class App extends Component {
   constructor() {
     super();
@@ -30,14 +31,16 @@ class App extends Component {
 
 
     return (
-      <div className="bg-gradient-to-r from-[#0f766e] to-[#172554] -mt-4">
-        <div className="flex flex-col items-center pt-12">
-          <h1 className="flex items-center text-[40px] sm:text-[70px]">rilexfriends</h1>
+      <div className="bg-gradient-to-r from-[#0f766e] to-[#172554]">
+        <div className="background"> <h1 className="animated-title">ROBO VAULT</h1></div>
+        {/* <img className="background" src={funRobotCharacter} alt="nill"/> */}
+        <div className="flex flex-col items-center py-6">
           <SearchBox searchChange={this.onSearchChange} /></div>
         <Scroll className="flex">
           <CardList robots={filteredRobots} />
         </Scroll>
       </div>
+
     );
   }
 }
